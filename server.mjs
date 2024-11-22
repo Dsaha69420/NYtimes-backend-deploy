@@ -10,7 +10,7 @@ const apiKey = process.env.NY_TIMES_API_KEY;
 const allowedOrigins = [
   "http://localhost:3000", // Localhost for development
   "https://nytimes-backend-deploy.onrender.com:<3000>/api/articles", // Replace with the actual link
-  "https://nytimes-frontend-deploy.onrender.com" // Replace with the actual React app link
+  "https://nytimes-frontend-deploy.onrender.com<3000>/api/articles" // Replace with the actual React app link
 ];
 
 app.use(cors({ origin: allowedOrigins }));
