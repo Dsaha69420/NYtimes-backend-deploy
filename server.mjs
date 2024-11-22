@@ -7,7 +7,13 @@ dotenv.config();
 const app = express();
 const apiKey = process.env.NY_TIMES_API_KEY;
 
-app.use(cors({ origin: "http://localhost:3000" }));
+const allowedOrigins = [
+  "http://localhost:3000", // Localhost for development
+  "https://nytimes-backend-deploy.onrender.com", // Replace with the actual link
+  "https://nytimes-frontend-deploy.onrender.com" // Replace with the actual React app link
+];
+
+app.use(cors({ origin: allowedOrigins }));
 
 app.get("/api/articles", async (req, res) => {
   console.log(apiKey);
